@@ -1,0 +1,58 @@
+<html>
+<body bgcolor=black>
+<font face="Trebuchet MS" color=white>
+  <h2>Effort Breakup Details: </h2>
+  <table style="overflow-x:auto;">
+  <tr>
+    <th width="5%">S.No</th>
+    <th width="35%">Interface</th>
+    <th width="9%">Design</th> 
+    <th width="17%">Development</th>
+    <th width="15%">Unit Testing</th>
+    <th width="20%">Total Effort</th>
+  </tr>
+  {% for doc in weightage %}
+  <tr>
+    <td >{{loop.index}}</td>
+    <td >{{doc['product']}}<br>{{doc['srcformat']}}:{{doc['srcprotocol']}} to {{doc['targetformat']}}:{{doc['targetprotocol']}} </td>
+    <td >{{'%0.2f'|format(doc['weightage']*0.25)}} PD</td>
+    <td >{{'%0.2f'|format(doc['weightage']*0.50)}} PD</td>
+    <td >{{'%0.2f'|format(doc['weightage']*0.25)}} PD</td>
+    <td >{{'%0.2f'|format(doc['weightage'])}} PD</td>
+  </tr>  
+{% endfor %} 
+</table>
+</font>
+<style>
+body{
+ background-color: rgba(0,0,0,0.8);
+border:none;
+}
+
+td,th {
+    border-bottom: 1px solid #ddd;
+}
+th{
+background-color: rgba(10,10,10,1);
+}
+td{
+background-color: rgba(0,0,0,0.8);
+}
+tr:hover{
+background-color: rgba(10,10,10,0.8);
+}
+table {
+background:url('https://media.giphy.com/media/xTiTnxpQ3ghPiB2Hp6/giphy.gif');
+text-shadow: 2px 2px black;
+table-layout: fixed;
+    padding:10px;
+    color:white;
+    margin-left:5vw;
+    width:85vw;
+    text-align:left;
+    line-height:35px;
+    box-shadow: inset 0 5px 5px 0 white, 0 5px 5px 0 white;
+}
+</style>
+</body>
+</html>
