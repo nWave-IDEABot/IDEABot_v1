@@ -1,0 +1,84 @@
+<html>
+<body bgcolor=black>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<font face="Trebuchet MS" color=white align=center>
+  <h2>IDEA Bot Admin console</h2>
+  <p>Admin console for IDEA bot dataset management</p>
+  <font face="Trebuchet MS" color=orange align=left>
+  <h3>Approval Pending Data: </h3>
+  <table style="overflow-x:scroll;">
+  <tr>
+    <th width="5%">S.No</th>
+    <th width="45%">Interface</th>
+    <th width="9%">Effort</th> 
+    <th width="11%">Feedback</th>
+    <th width="30%">Approve/Reject</th>
+  </tr>
+  {% for doc in notApproved %}
+  <tr>
+    <td >{{loop.index}}</td>
+    <td >{{doc['disp-product']}} / {{doc['disp-srcF']}} / {{doc['disp-srcP']}} {{doc['disp-targetF']}} / {{doc['disp-targetP']}} </td>
+    <td >{{'%0.2f'|format(doc['weightage'])}} </td>
+    <td >{{doc['feedback']}} </td>
+    <td > <a href="/updateDB/{{doc['_id']}}" class="btn btn-success"><span class="network-name" id="approve"  style="width:70%;height:70%;">Approve</span><a href="/rejectData/{{doc['_id']}}" class="btn btn-danger"><span class="network-name" style="width:70%;height:70%;">Reject</span></td>
+  </tr>  
+   {% endfor %}
+  </table><br>
+  <font face="Trebuchet MS" color=green align=left>
+  <h3>Approved Data:<h3>
+  <table style="overflow-x:scroll;">
+   <tr>
+    <th width="5%">S.No</th>
+    <th width="35%">Interface</th>
+    <th width="9%">Effort</th> 
+    <th width="17%">Feedback</th>
+    <th width="15%">Approve/Reject</th>
+  </tr>
+   {% for doc in approved %}
+   <tr>
+    <td >{{loop.index}}</td>
+    <td >{{doc['product']}} / {{doc['srcformat']}} / {{doc['srcprotol']}} {{doc['targetformat']}} / {{doc['targetprotocol']}} </td>
+    <td >{{'%0.2f'|format(doc['weightage'])}} </td>
+    <td >{{doc['feedback']}} </td>
+    <td >Approved </td>
+   </tr>  
+   {% endfor %} 
+</table><br>
+<p>© 2018 Cognizant EAS-IPM.</p>
+</font>
+<style>
+body{
+ background-color: rgba(0,0,0,0.9);
+}
+td,th {
+    border-bottom: 1px solid #ddd;
+}
+th{
+background-color: rgba(10,10,10,1);
+}
+td{
+background-color: rgba(0,0,0,0.8);
+}
+tr:hover{
+background-color: rgba(10,10,10,0.8);
+}
+table {
+background:none;
+table-layout: fixed;
+    padding:5px;
+    color:white;
+    margin-left:5vw;
+    width:85vw;
+    text-align:left;
+    height:70px;
+    box-shadow: inset 0 5px 5px 0 white, 0 5px 5px 0 white;
+}
+
+</style>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+</html>
