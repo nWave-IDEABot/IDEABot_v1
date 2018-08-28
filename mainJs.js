@@ -6,7 +6,7 @@ remote.avatar = "https://developers.viber.com/images/apps/apiai-icon.png";
 var SESSIONID=generateUUID();
 var accessToken = "3c44974b43934bbdb1fdc030b17df30e";
 var baseUrl = "https://api.api.ai/v1/";
-var Opurl="https://nwave-output-v1.herokuapp.com/getop/";
+var Opurl=" https://nwave-flask-outputpage.herokuapp.com/getop/";
 var url=Opurl+SESSIONID;
 function formatTime(date) {
     var hours = date.getHours();
