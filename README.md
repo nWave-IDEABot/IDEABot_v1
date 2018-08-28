@@ -1,3 +1,5 @@
 # nWave-Flask-Demo
-Flask Webservice (Python) which is deployed to Heroku
-https://nwave-ideabot-flask-webhook-p.herokuapp.com/webhook
+
+Custom UI: https://nwave-ideabot.github.io/IDEABot_v1/
+Python REST API (Regression model):
+Python REST API (Output):
